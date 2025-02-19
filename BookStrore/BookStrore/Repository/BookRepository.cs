@@ -1,4 +1,5 @@
 ﻿using BookStrore.Models;
+using System.Linq;
 
 namespace BookStrore.Repository
 {
@@ -18,7 +19,7 @@ namespace BookStrore.Repository
         public List<Book> SearchBook(string title, string author)
         {
 
-            List<Book> lst = DataSource().Where(x => x.Title.Contains(title) || x.Author.Contains(author)).ToList();
+            List<Book> lst = DataSource().Where(x => x.Title.ToLower().Contains(title) || x.Author.ToLower().Contains(author)).ToList();
             return lst ;
         }
 
