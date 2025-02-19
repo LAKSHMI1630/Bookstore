@@ -4,9 +4,40 @@
 
 @model List<BookStrore.Models.Book>;
 
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
 @{
-   @foreach(var item in  @Model)
-    {
-        <h1>@item.Title</h1>
-    }
+    Layout = "";
 }
+
+  <body class="container">
+     
+    @{
+        @foreach (var item in @Model)
+        {
+            
+            <div class="row">
+
+            <h1 class="h1 col-md-4">@item.Title</h1>
+
+            <h2 class="h2 col-md-4">@item.Author</h2>
+
+            <input type="button" class="col-md-4 btn btn-success dropdown-toggle " value="CLick me"/>
+
+            </div>
+        }
+    }
+  </body>
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+<script>
+ $(document).ready(function(){
+     alert("Page Loaded");
+ })
+</script>
+
